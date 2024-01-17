@@ -1,48 +1,50 @@
-var hours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]
+var hours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 
-var now = dayjs().format(dddd-MMMM-D);
+console.log(dayjs());
 
+// Date at top of page //
+var now = dayjs();
+var theDate = document.createElement("p");
+theDate.innerHTML = now;
 console.log(now);
 
+var headerEl = document.getElementById("currentDay");
+headerEl.appendChild(theDate);
 
-var headerEl = document.getElementById('currentDay')
+// Container Element
+var containerEl = document.getElementById("container");
 
+// Timeblock Element //
+var timeblockEl = document.getElementById("timeblocks");
 
-.appendChild(now);
-
-
-
-
-// var myDay
-
-
-
-// console.log(dayjs());
-
-// const events = document.querySelectorAll(".event");
-// // console.log(events);
-
-// events.forEach( event => {
-//     console.log(event)
-// })
+  // classname = time-block
+  var containerEl = document.getElementById("container");
 
 
 
+// Loop Through 'Working Hours'
+hours.forEach(hour => {
+    // Create a new element for each hour
+    const element = document.createElement('div');    
+    // Set the content or attributes of the element
+    element.textContent = hour;
+    // Modify the element attributes
+    element.setAttribute("class", "hour")
+    // Append the element to the desired parent element
+    document.body.appendChild(element);
+  });
 
 
 
 
 
 
-// import dayjs from 'dayjs';#
 
-// var currentDay = document.getElementById("currentDay");
 
-// currentDay = dd/mm/yyyy;
 
-// const formatDate = (date) => {
-//     var day = date.getDate();
-//     return(day);
-// }
 
-// console.log(formatDate);
+
+
+
+
+
